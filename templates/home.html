@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Your Videos</h2>
+{% for video in videos_data %}
+    <div>
+        <p>{{ video.name }}</p>
+        <a href="{{ url_for('video', video=video.id) }}">
+            <img src="https://d1xq6wtx6nxu8o.cloudfront.net/{{ video.pics | safe }}" style="width: 236px; height: 236px;" width="236" height="236">
+        </a>
+    </div>
+{% endfor %}
+{% endblock %}

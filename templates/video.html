@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ video_info.name }}{% endblock %}
+
+{% block content %}
+<h2>{{ video_info.name }}</h2>
+<video width="640" height="320" controls preload="none" poster='https://d1xq6wtx6nxu8o.cloudfront.net/{{ video_info.pics | safe }}' data-setup='{ "aspectRatio":"640:267", "playbackRates": [1, 1.5, 2] }'>
+    <source src="https://d1xq6wtx6nxu8o.cloudfront.net/{{ video_info.file }}" type="video/mp4">
+</video>
+<div>
+    <a href="{{ url_for('home') }}">Back to Your Videos</a>
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+<h2>Welcome</h2>
+<p>Welcome back, {{ username }}!</p>
+<div>
+    <a href="{{ url_for('home') }}">Your Videos</a>
+</div>
+{% endblock %}
