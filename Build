@@ -1,6 +1,6 @@
 sudo docker build -t flaskapp .
-sudo docker tag flaskapp ikechucool4real/FlaskApp
-sudo docker push ikechucool4real/FlaskApp
+sudo docker tag flaskapp ikechucool4real/flaskapp
+sudo docker push ikechucool4real/flaskapp
 sudo docker stop flaskapp
 sudo docker rm flaskapp
-sudo docker run -p 80:5000 -d --name flaskapp ikechucool4real/FlaskApp
+sudo docker run -p 80:5000 -d --name flaskapp ikechucool4real/flaskapp
