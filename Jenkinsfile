@@ -3,6 +3,22 @@ pipeline {
 
     stages {
         stage('Build and Push Image') {
+            steps { 
+                script {
+                    // Set additional environment variable
+                    withEnv(["HOME=${env.WORKSPACE}"]) {
+                        // Build Docker image
+                        sh 'docker build -t flaskapp .'
+
+                        // Tag the Docker image
+                        sh 'docker tag flaskapp ikechucool4real/flaskapp'
+
+                        // Push the Docker image to Docker Hub
+                        sh 'docker push ikechucool4real/flaskapp'
+                    }                       
+                }
+            }
+        }
             steps {
                 script {
                     // Build Docker image
