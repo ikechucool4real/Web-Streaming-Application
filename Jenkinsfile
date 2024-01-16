@@ -19,19 +19,6 @@ pipeline {
                 }
             }
         }
-            steps {
-                script {
-                    // Build Docker image
-                    sh 'docker build -t flaskapp .'
-
-                    // Tag the Docker image
-                    sh 'docker tag flaskapp ikechucool4real/flaskapp'
-
-                    // Push the Docker image to Docker Hub
-                    sh 'docker push ikechucool4real/flaskapp'
-                }
-            }
-        }
 
         stage('Stop and Remove Existing Container') {
             steps {
